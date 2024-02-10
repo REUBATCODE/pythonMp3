@@ -23,7 +23,7 @@ pip install pytube moviepy
 
 ## Usage
 
-To use the script, simply execute the following command in your terminal, replacing with the actual URL of the video you wish to download in the app.py code:
+To use the script, simply execute the following command in your terminal, and following the steps on screen.
 
 ```bash
 python app.py
@@ -63,7 +63,7 @@ pip install pytube moviepy
 ```
 
 ## Uso
-Para usar el script, simplemente ejecuta el siguiente comando en tu terminal, reemplazando con la URL real del video que deseas descargar en el código de app.py:
+Para usar el script, simplemente ejecuta el siguiente comando en tu terminal y sigue los pasos que se muestran en pantalla:
 ```bash
 python app.py
 ```
