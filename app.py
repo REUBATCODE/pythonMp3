@@ -2,6 +2,13 @@ from pytube import YouTube, Playlist
 from moviepy.editor import *
 import os
 import sys
+import re
+
+def clean_filename(title):
+    #Delete special characters
+    cleaned_title = re.sub(r'[\\/*?:"<>|\']', '', title)
+    cleaned_title = re.sub(r'\s+', '_', cleaned_title)
+    return cleaned_title
 
 def download_and_convert(url, output_dir='.'):
     try:
@@ -10,7 +17,8 @@ def download_and_convert(url, output_dir='.'):
         if not os.path.exists(output_dir):
             os.makedirs(output_dir)
         output_file = video.download(output_path=output_dir)
-        name_mp3 = os.path.join(output_dir, yt.title + ".mp3")
+        cleaned_title = clean_filename(yt.title)
+        name_mp3 = os.path.join(output_dir, cleaned_title + ".mp3")
         video_clip = AudioFileClip(output_file)
         video_clip.write_audiofile(name_mp3)
         os.remove(output_file)
